@@ -1,8 +1,14 @@
 import React from 'react'
-import { GoogleMap } from 'react-google-maps';
+import { GoogleMapLoader, GoogleMap } from 'react-google-maps';
 
 export default (props) => {
   return (
-    <GoogleMap defaultZonn={12} defaultCenter={{lat: props.lat, lng: props.lon}}  />
+    <GoogleMapLoader
+      contrainerElement={ <div style={{height: '100%'}} /> }
+      googleMapElement={
+        <GoogleMap defaultZoom={12} defaultCenter={{lat: props.lat, lng: props.lng}}/>
+      }
+      />
   )
 }
+
